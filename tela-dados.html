@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Clientes</title>
+    <link rel="stylesheet" href="tela-dados.css">
+    <script type="module" src="tela-dados.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Clientes Cadastrados</h1>
+        <table id="clientsTable">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Telefone</th>
+                    <th>Detalhes</th>
+                    <th>Ações</th>  
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">Fechar</button>
+            <h2>Detalhes do Cliente</h2>
+            <pre id="clientDetails"></pre> 
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <script type="module" src="cadastro.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
+
+    
+</head>
+<body>
+    <div class="container">    
+        <div class="form">
+            <form action="#">
+                <div class="title">
+                    <h1>Cadastre-se</h1>
+                </div>
+                <div class="inputGroup">
+                    <div class="input-box">
+                        <label for="Nome">Nome:</label>
+                        <input id="Nome" type="text" name="Nome" placeholder="Digite seu Nome Completo" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="Rg">RG:</label>
+                        <input id="Rg" type="number" name="Rg" placeholder="Digite Sua Identidade" >
+                    </div>
+                    <div class="input-box">
+                        <label for="sigle">Órgão Expedidor:</label>
+                        <input id="sigle" type="text" name="sigle" style="text-transform: uppercase;" placeholder="Órgão Expedidor" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="uf">UF:</label>
+                        <input id="uf" type="text" name="uf" style="text-transform: uppercase;" placeholder="UF" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="nasc">Data de Nascimento:</label>
+                        <input id="nasc" type="date" name="nasc" placeholder="Digite Sua Data de Nascimento" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="cep">CEP:</label>
+                        <input id="cep" type="text" name="cep" placeholder="Digite seu CEP" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="city">Cidade</label>
+                        <input id="city" type="text" name="city" placeholder="Digite sua Ciade" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="local">Endereço:</label>
+                        <input id="local" type="text" name="local" placeholder="Digite seu Endereço" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="num">Nº:</label>
+                        <input id="num" type="number" name="num" placeholder="Digite o número da casa " required>
+                    </div>
+                    <div class="input-box">
+                        <label for="bairro">Bairro:</label>
+                        <input id="bairro" type="text" name="bairro" placeholder="Digite seu Bairro" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="cdn">Cidade de Nascimento:</label>
+                        <input id="cdn" type="text" name="cdn" placeholder="Cidade de Nascimento" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="prof">Profissão:</label>
+                        <input id="prof" type="text" name="prof" placeholder="Digite Sua Profissão" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="civil">Estado Civil:</label>
+                        <input list="opcoes" id="civil" type="text"  name="civil" placeholder="Qual seu Estado Civil" required>
+                        <datalist id="opcoes">
+                            <option value="Casado(a)"></option>
+                            <option value="Solteiro(a)"></option>
+                        </datalist>
+                    </div>
+                    <div class="input-box">
+                        <label for="cpf">CPF:</label>
+                        <input id="cpf" type="text" name="cpf" maxlength="14" oninput="formatarCPF(this)" placeholder="000.000.000-00" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="tel1">Telefone 1:</label>
+                        <input id="tel1" type="tel" name="tel1" placeholder="(XX)XXXXX-XXXX" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="tel2">Telefone 2 (Responsável):</label>
+                        <input id="tel2" type="tel" name="tel2" placeholder="(XX)XXXXX-XXXX" >
+                    </div>
+                    <div class="input-box">
+                        <label for="cond">Condição de Saúde:</label>
+                        <input id="cond" type="text" name="cond" placeholder="" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="med">Medicamentos:</label>
+                        <input id="med" type="text" name="med" placeholder="Quais Medicamentos"  >
+                    </div>
+
+                    <div class="input-box">
+                        <label for="saude">Se considera apto para:</label>
+                        <input id="saude" type="text" name="saude" format="currency" placeholder="" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="money">Renda:</label>
+                        <input id="money" type="number" name="money" format="currency" placeholder="R$:" required>
+                    </div>
+                </div>
+
+                <div class="alerg">
+                    <div class="alerg-input">
+                        <h6>Alergia?</h6>
+                    </div>
+                    <div>
+                        <input type="radio" id="yes" name="alergia" value="yes" onclick="toggleEspecificar()">
+                        <label for="yes">Sim</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="no" name="alergia" value="no" onclick="toggleEspecificar()">
+                        <label for="no">Não</label>
+                    </div>
+                    <div class="outh">
+                        <label for="outh">Quais:</label>
+                        <input id="outh" type="text" name="outh" placeholder="Alergia">
+                    </div>
+                </div>  
+
+                <div class="generoInput">
+                    <div class="generoTitulo">
+                        <h6>Gênero</h6>
+                    </div>
+                    <div class="generoGrup">
+                        <div class="generoInput">
+                            <input type="radio" id="mas" name="genero" value="Masculino" required>
+                            <label for="mas">Masculino</label>
+                        </div>
+
+                        <div class="generoInput">
+                            <input type="radio" id="fem" name="genero" value="Feminino" required>
+                            <label for="fem">Feminino</label>
+                        </div>
+
+                        <div class="generoInput">
+                            <input type="radio" id="nome" name="genero" value="Outro" required>
+                            <label for="nome">Outro</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="cadBotton" > 
+                    <button type="submit">Salvar</button>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.0.0/dist/umd/supabase.min.js"></script>
+
+</body>
+</html>
